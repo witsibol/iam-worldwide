@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IAM Worldwide Online Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Navigation -->
+    <nav class="bg-green-700 text-white p-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold">IAM Online Shop</h1>
+      <div>
+        <button class="bg-white text-green-700 px-3 py-1 rounded" onclick="toggleLoginModal()">Login</button>
+      </div>
+    </nav>
+
+    <!-- Filter and Search -->
+    <div class="p-4 bg-white shadow-md">
+      <input type="text" placeholder="Search products..." class="p-2 border rounded w-full max-w-md" oninput="filterProducts(this.value)" />
+    </div>
+
+    <!-- Product Listing -->
+    <section class="p-4 grid grid-cols-1 md:grid-cols-3 gap-4" id="product-list">
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Pure Organic Barley Powdered Drink</h2>
+        <p>Price: ₱1000 (Non-Member) / ₱500 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Pure Organic Barley Powdered Drink')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Pure Organic Barley Capsules</h2>
+        <p>Price: ₱1750 (Non-Member) / ₱1000 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Pure Organic Barley Capsules')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Choco Barley</h2>
+        <p>Price: ₱1000 (Non-Member) / ₱500 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Choco Barley')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Coffee Mix with Glutathione</h2>
+        <p>Price: ₱750 (Non-Member) / ₱500 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Coffee Mix with Glutathione')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Coffee Mix with Tongkat Ali</h2>
+        <p>Price: ₱750 (Non-Member) / ₱500 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Coffee Mix with Tongkat Ali')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Black Coffee Mix with Organic Barley</h2>
+        <p>Price: ₱300 (Non-Member) / ₱200 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Black Coffee Mix with Organic Barley')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Café Latte with Barley and Alkaline</h2>
+        <p>Price: ₱750 (Non-Member) / ₱500 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Café Latte with Barley and Alkaline')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Café Mocha with Barley and Alkaline</h2>
+        <p>Price: ₱750 (Non-Member) / ₱500 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Café Mocha with Barley and Alkaline')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Slim Caffe Macchiato</h2>
+        <p>Price: ₱375 (Non-Member) / ₱250 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Slim Caffe Macchiato')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Acai Berry Extract with Collagen</h2>
+        <p>Price: ₱700 (Non-Member) / ₱350 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Acai Berry Extract with Collagen')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Grape Juice with Garcinia Cambogia</h2>
+        <p>Price: ₱900 (Non-Member) / ₱540 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Grape Juice with Garcinia Cambogia')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing Immunergy</h2>
+        <p>Price: ₱500 (Non-Member) / ₱350 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing Immunergy')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Amazing White Glutathione</h2>
+        <p>Price: ₱2950 (Non-Member) / ₱1475 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Amazing White Glutathione')">Add to Cart</button>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h2 class="text-xl font-semibold">Awesome Organic Premium Barley Soap</h2>
+        <p>Price: ₱750 (Non-Member) / ₱500 (Member)</p>
+        <button class="mt-2 bg-green-600 text-white px-4 py-2 rounded" onclick="addToCart('Awesome Organic Premium Barley Soap')">Add to Cart</button>
+      </div>
+    </section>
+
+    <!-- Membership Recommendation -->
+    <section class="p-4 bg-yellow-100 border-t-4 border-yellow-400">
+      <h3 class="text-lg font-bold">Not a member yet?</h3>
+      <p>Avail a package and enjoy member discounts!</p>
+      <ul class="list-disc ml-5">
+        <li><a href="#gold" class="text-blue-600 underline">Gold - ₱44,800</a></li>
+        <li><a href="#platinum" class="text-blue-600 underline">Platinum - ₱112,000</a></li>
+        <li><a href="#jade" class="text-blue-600 underline">Jade - ₱198,800</a></li>
+      </ul>
+    </section>
+
+    <!-- Checkout Section -->
+    <section class="p-4">
+      <h2 class="text-2xl font-bold mb-2">Checkout</h2>
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input type="text" placeholder="Full Name" class="p-2 border rounded" required />
+        <input type="email" placeholder="Email Address" class="p-2 border rounded" required />
+        <input type="text" placeholder="Shipping Address" class="p-2 border rounded col-span-full" required />
+        <select class="p-2 border rounded col-span-full" required>
+          <option disabled selected>Select Payment Method</option>
+          <option>GCash</option>
+          <option>PayMaya</option>
+          <option>Bank Transfer</option>
+          <option>Cash on Delivery</option>
+        </select>
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded col-span-full">Place Order</button>
+      </form>
+    </section>
+
+    <!-- Contact Info + Data Privacy -->
+    <footer class="bg-gray-800 text-white p-4 mt-8">
+      <p>Contact us at: 0991-542-8293 / 0929-452-1786</p>
+      <p>Email: ryztelj@gmail.com / iamworldwideprods@gmail.com</p>
+      <p>Facebook: <a href="https://facebook.com/ryzteljade.dejesus.1" class="underline">Ryztel De Jesus</a></p>
+      <p>Instagram: <a href="https://instagram.com/witsibol" class="underline">@witsibol</a></p>
+      <p class="mt-2 text-sm">We respect your privacy. All submitted information is secured and protected under the Data Privacy Act of 2012 (RA 10173).</p>
+    </footer>
+
+    <!-- Login Modal (hidden by default) -->
+    <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+      <div class="bg-white p-6 rounded shadow w-80">
+        <h2 class="text-xl font-bold mb-2">Member Login</h2>
+        <input type="text" placeholder="Username" class="w-full p-2 border rounded mb-2" />
+        <input type="password" placeholder="Password" class="w-full p-2 border rounded mb-2" />
+        <a href="https://login.iam-worldwidecorp.com/index?msg=nullaccount2" target="_blank">
+          <button class="bg-green-600 text-white px-4 py-2 rounded w-full">Login</button>
+        </a>
+        <button class="text-sm text-red-600 mt-2 w-full" onclick="toggleLoginModal()">Cancel</button>
+      </div>
+    </div>
+
+    <script>
+      function toggleLoginModal() {
+        document.getElementById('loginModal').classList.toggle('hidden');
+      }
+
+      function filterProducts(query) {
+        const items = document.querySelectorAll('#product-list > div');
+        items.forEach(item => {
+          item.style.display = item.textContent.toLowerCase().includes(query.toLowerCase()) ? 'block' : 'none';
+        });
+      }
+
+      function addToCart(productName) {
+        alert(`${productName} added to cart.`);
+      }
+    </script>
+  </body>
+</html>
